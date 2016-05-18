@@ -32,9 +32,11 @@
     - elixir
     - elixirc
 
-- name: install hex, rebar and phoenix
+- name: install hex and rebar
   command: "mix {{ item }} --force"
   with_items:
     - local.hex
     - local.rebar
-    - local.phoenix
+
+- name: install phoenix
+  command: "mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez"
