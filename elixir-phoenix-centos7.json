@@ -12,7 +12,8 @@
         "ansible/roles/elixir",
         "ansible/roles/nfs",
         "ansible/roles/packer-rhel",
-        "ansible/roles/postgresql"
+        "ansible/roles/postgresql",
+        "ansible/roles/nodejs"
       ]
     },
     {

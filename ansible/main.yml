@@ -7,9 +7,11 @@
     - packer-rhel
     - elixir
     - postgresql
+    - nodejs
   tasks:
     - name: set postgres password
       postgresql_user: user=postgres password=postgres
   vars:
     postgresql_version: 9.4
+    nodejs_version: 5.x
 
