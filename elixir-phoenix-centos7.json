@@ -1,5 +1,5 @@
 {
-  "vars": {
+  "variables": {
     "box_version": "0.0.1"
   },
   "provisioners": [
