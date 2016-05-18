@@ -1,7 +1,9 @@
 {
   "variables": {
     "box_version": "0.2.0",
-    "box_description": "PostgreSQL admin user/pass: postgres/postgres. Includes Erlang, Elixir, Phoenix, PostgreSQL 9.4 and Node.js 5.x."
+    "box_description": "PostgreSQL admin user/pass: postgres/postgres. Includes Erlang, Elixir, Phoenix, PostgreSQL 9.4 and Node.js 5.x.",
+    "vm_name": "elixir-phoenix-centos-7-x86_64",
+    "atlas_artifact": "pgrunwald/elixir-phoenix-centos7"
   },
   "provisioners": [
     {
@@ -50,7 +52,7 @@
       "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "elixir-phoenix-centos-7-x86_64",
+      "vm_name": "{{ user `vm_name` }}",
       "vboxmanage": [
         [
           "modifyvm",
@@ -88,7 +90,7 @@
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
       "tools_upload_flavor": "linux",
-      "vm_name": "elixir-phoenix-centos-7-x86_64",
+      "vm_name": "{{ user `vm_name` }}",
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
         "memsize": "2048",
@@ -107,7 +109,7 @@
         "only": [
           "virtualbox-iso"
         ],
-        "artifact": "pgrunwald/elixir-phoenix-centos7",
+        "artifact": "{{ user `atlas_artifact` }}",
         "artifact_type": "vagrant.box",
         "metadata": {
           "provider": "virtualbox",
@@ -121,7 +123,7 @@
         "only": [
           "vmware-iso"
         ],
-        "artifact": "pgrunwald/elixir-phoenix-centos7",
+        "artifact": "{{ user `atlas_artifact` }}",
         "artifact_type": "vagrant.box",
         "metadata": {
           "provider": "vmware_desktop",
