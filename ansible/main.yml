@@ -9,6 +9,7 @@
     - postgresql
     - nodejs
     - git
+    - inotify-tools
   tasks:
     - name: set postgres password
       postgresql_user: user=postgres password=postgres
