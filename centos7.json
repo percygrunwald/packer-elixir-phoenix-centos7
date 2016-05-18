@@ -8,7 +8,12 @@
     {
       "type": "ansible-local",
       "playbook_file": "ansible/main.yml",
-      "role_paths": []
+      "role_paths": [
+        "ansible/roles/elixir",
+        "ansible/roles/nfs",
+        "ansible/roles/packer-rhel",
+        "ansible/roles/postgresql"
+      ]
     },
     {
       "type": "shell",
@@ -88,7 +93,7 @@
   ],
   "post-processors": [
     {
-      "output": "builds/{{.Provider}}-centos7.box",
+      "output": "builds/{{.Provider}}-elixir-phoenix-centos7.box",
       "type": "vagrant"
     }
   ]
