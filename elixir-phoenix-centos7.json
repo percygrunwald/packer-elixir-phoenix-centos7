@@ -96,7 +96,11 @@
     {
       "type": "atlas",
       "artifact": "pgrunwald/elixir-phoenix-centos7",
-      "artifact_type": "vagrant.box"
+      "artifact_type": "vagrant.box",
+      "metadata": {
+        "provider": "{{ .Provider }}",
+        "created_at": "{{ timestamp }}"
+      }
     }
   ]
 }

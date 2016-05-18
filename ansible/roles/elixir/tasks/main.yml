@@ -32,8 +32,9 @@
     - elixir
     - elixirc
 
-- name: install hex
-  command: mix local.hex --force
-
-- name: install rebar
-  command: mix local.rebar --force
+- name: install hex, rebar and phoenix
+  command: "mix {{ item }} --force"
+  with_items:
+    - local.hex
+    - local.rebar
+    - local.phoenix
