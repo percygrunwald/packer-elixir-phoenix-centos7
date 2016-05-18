@@ -8,6 +8,7 @@
     - elixir
     - postgresql
     - nodejs
+    - git
   tasks:
     - name: set postgres password
       postgresql_user: user=postgres password=postgres
