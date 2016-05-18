@@ -1,8 +1,15 @@
 ---
 - hosts: all
-  sudo: yes
+  become: true
   gather_facts: yes
-
   roles:
     - nfs
     - packer-rhel
+    - elixir
+    - postgresql
+  tasks:
+    - name: set postgres password
+      postgresql_user: user=postgres password=postgres
+  vars:
+    postgresql_version: 9.4
+
