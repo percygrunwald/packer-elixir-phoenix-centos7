@@ -1,4 +1,7 @@
 {
+  "vars": {
+    "box_version": "0.0.1"
+  },
   "provisioners": [
     {
       "type": "shell",
@@ -95,11 +98,24 @@
   "post-processors": [
     {
       "type": "atlas",
+      "only": ["virtualbox-iso"],
       "artifact": "pgrunwald/elixir-phoenix-centos7",
       "artifact_type": "vagrant.box",
       "metadata": {
-        "provider": "{{ .Provider }}",
-        "created_at": "{{ timestamp }}"
+        "provider": "virtualbox",
+        "created_at": "{{ timestamp }}",
+        "version": "{{ user `box_version` }}"
+      }
+    },
+    {
+      "type": "atlas",
+      "only": ["vmware-iso"],
+      "artifact": "pgrunwald/elixir-phoenix-centos7",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+        "provider": "vmware_desktop",
+        "created_at": "{{ timestamp }}",
+        "version": "{{ user `box_version` }}"
       }
     }
   ]
