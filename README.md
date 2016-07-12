@@ -10,8 +10,8 @@ Based on Jeff Geerling's [packer-centos-7](https://github.com/geerlingguy/packer
 
 All the software required for Phoenix development.
 
-* Erlang 18.3
-* Elixir 1.3.0
+* Erlang 19.0
+* Elixir 1.3.1
     * Hex
     * Rebar 
     * Phoenix
